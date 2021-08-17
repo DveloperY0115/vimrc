@@ -47,8 +47,25 @@ Plugin 'tpope/vim-fugitive'
 " Command-t for quick file navigation
 Plugin 'git://git.wincent.com/command-t.git'
 
+" Jedi
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Jedi for Python auto completion
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#show_call_signatures=0 " Do not display function call signatures (set to 1 to activate)
+let g:jedi#popup_select_first="0" " Do not display pop-up at auto completion
+let g:jedi#force_py_version=3
+
+" YouCompleteMe
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe for auto completion
 Plugin 'Valloric/YouCompleteMe'
+
+" Path to YouCompleteMe config file
+let g:ycm_global_ycm_extra_conf = "~/vimrc/.ycm_c-c++_conf.py"
+
+" YouCompleteMe settings
+let g_ycm_min_num_of_chars_for_completion = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Nerd-Tree for finding files
 Plugin 'scrooloose/nerdtree'
@@ -68,5 +85,5 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" <F3> NERDTree
+" <`> NERDTree
 map ` :NERDTreeToggle<cr>

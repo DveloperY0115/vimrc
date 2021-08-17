@@ -21,15 +21,27 @@ set lbr
 set cursorline       " Draw line below the line being edited
 set incsearch        " Accumulative search on keyword input
 set laststatus=2     " Use improved status bar
-syntax on            " Use syntax highlighting
 filetype indent on   " Different syntax highlighting for different types of files 
 set background=dark  " Highlighting light / dark 
 set backspace=eol,start,indent "  줄의 끝, 시작, 들여쓰기에서 백스페이스시 이전줄로
 set history=1000     " vi 편집기록 기억갯수 .viminfo에 기록
 highlight Comment term=bold cterm=bold ctermfg=4 " 코멘트 하이라이트
-set mouse=a          " Enable mouse in Vim
+" set mouse=a          " Enable mouse in Vim
 set t_Co=256         " Adjust color
 filetype off                  " required
+
+" Use syntax highlighting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("syntax")
+	syntax on
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Color Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
+colorscheme gruvbox 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
